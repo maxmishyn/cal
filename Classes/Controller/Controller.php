@@ -454,7 +454,7 @@ class Controller extends AbstractPlugin
             $this->getDateTimeObject->getYear()
         )) {
             if ($this->getDateTimeObject->getDay() > 28) {
-                $this->getDateTimeObject->setDay($this->getDateTimeObject->getDay()--);
+                $this->getDateTimeObject->setDay($this->getDateTimeObject->getDay()-1);
             } elseif ($this->getDateTimeObject->getDay() < 1) {
                 $this->getDateTimeObject->setDay(1);
             }
@@ -811,7 +811,7 @@ class Controller extends AbstractPlugin
                                 'datetime',
                                 'period'
                             ]))) {
-                        $this->conf['view.'][$this->conf['view'] . '.']['minDate'] = $event->start->format('Ymd');
+                        $this->conf['view.'][$this->conf['view'] . '.']['minDate'] = $event->getStart()->format('Ymd');
                         $this->conf['view.'][$this->conf['view'] . '.']['maxDate'] = $this->piVars['maxDate'];
 
                         $eventArray = $modelObj->findEvent(

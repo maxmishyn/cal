@@ -489,7 +489,7 @@ class TodoService extends EventService
             );
         }
 
-        $eventData['pid'] = $object->row['pid'];
+        $eventData['pid'] = $object->getRow()['pid'];
 
         if ($this->rightsObj->isAllowedTo('edit', 'todo', 'image')) {
             $this->checkOnNewOrDeletableFiles('tx_cal_event', 'image', $eventData);

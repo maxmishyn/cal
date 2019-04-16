@@ -16,6 +16,7 @@ namespace TYPO3\CMS\Cal\Controller;
  */
 use TYPO3\CMS\Cal\Model\CalDate;
 use TYPO3\CMS\Cal\Model\Pear\Date\Calc;
+use TYPO3\CMS\Cal\Service\DateCalculationService;
 
 /**
  * This class combines all the time related functions
@@ -164,7 +165,7 @@ class Calendar
     public static function calculateEndMonthTime($dateObject = ''): CalDate
     {
         $timeObj = self::calculateStartDayTime($dateObject);
-        $timeObj = new CalDate(Calc::endOfNextMonth(
+        $timeObj = new CalDate(DateCalculationService::endOfMonthBySpan(
             $timeObj->getDay(),
             $timeObj->getMonth(),
             $timeObj->getYear()

@@ -87,6 +87,9 @@ class FnbEventService extends EventService
         // only include the recurring clause if we don't use the new recurring model or a view not needing recurring events.
         if ($includeRecurring) {
             // get the uids of recurring events from index
+
+           // \TYPO3\CMS\Core\Utility\DebugUtility::debug($this->starttime->format_('Y'));
+           // \TYPO3\CMS\Core\Utility\DebugUtility::debug($this->starttime->getYear());
             $select = 'event_uid';
             $table = 'tx_cal_index';
             $where = 'start_datetime >= ' . $this->starttime->format('YmdHMS') . ' AND start_datetime <= ' . $this->endtime->format('YmdHMS');
