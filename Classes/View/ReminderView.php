@@ -127,7 +127,7 @@ class ReminderView extends NotificationView
             $where2 = 'start_datetime >= ' . $now->format('%Y%m%d%H%M%S') . ' AND event_uid = ' . $calEventUID;
             $orderby2 = 'start_datetime asc';
             $result2 = $GLOBALS['TYPO3_DB']->exec_SELECTquery($select2, $table2, $where2, $orderby2);
-            if ($result) {
+            if ($result2) {
                 $tmp = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result2);
                 if (is_array($tmp)) {
                     $start_datetime = $tmp['start_datetime'];

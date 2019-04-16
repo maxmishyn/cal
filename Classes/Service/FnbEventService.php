@@ -297,7 +297,7 @@ class FnbEventService extends EventService
     public function createEvent($row, $isException): EventModel
     {
         $event = new EventModel($row, $isException, $this->getServiceKey());
-        $event->row['isFreeAndBusyEvent'] = 1;
+        $event->getRow()['isFreeAndBusyEvent'] = 1;
         return $event;
     }
 }
