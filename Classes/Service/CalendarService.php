@@ -74,7 +74,7 @@ class CalendarService extends BaseService
     public function find($uid, $pidList): array
     {
         $calendarArray = $this->getCalendarFromTable($pidList, ' AND uid=' . $uid);
-        return $calendarArray[0];
+        return $calendarArray;
     }
 
     /**

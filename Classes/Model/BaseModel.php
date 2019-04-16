@@ -1042,4 +1042,13 @@ abstract class BaseModel extends AbstractModel
     {
         $this->sharedGroups = $groupIds;
     }
+
+    /**
+     * Returns the row property
+     */
+    public function &getRow(): array
+    {
+        return $this->row;
+    }
+
 }
