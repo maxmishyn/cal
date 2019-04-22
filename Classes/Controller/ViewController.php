@@ -196,7 +196,6 @@ class ViewController extends BaseController
         /* Call the view and pass it the event to draw */
         $viewObj = $this->getServiceObjByKey('cal_view', 'ics', '_ics');
         $content = $viewObj->drawIcs($master_array, $getdate, $sendHeaders, $limitAttendeeToThisEmail);
-
         return $content;
     }
 

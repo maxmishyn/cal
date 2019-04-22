@@ -236,10 +236,14 @@ END:VCALENDAR
             header('Expires: 0');
             header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
             header('Content-Disposition: attachment; filename=' . $title);
-            header('Content-Type: text/ics');
+//            header('Content-Type: text/calendar; charset=utf-8');
             header('Pragma: ');
             header('Cache-Control:');
-        }
+
+            /** @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController $typoScriptFrontendController */
+            $typoScriptFrontendController = $GLOBALS['TSFE'];
+            $typoScriptFrontendController->setContentType('text/calendar; charset=utf-8');
+         }
         include ExtensionManagementUtility::extPath('cal') . 'ext_emconf.php';
         $myem_conf = array_pop($EM_CONF);
         $method = 'PUBLISH';
