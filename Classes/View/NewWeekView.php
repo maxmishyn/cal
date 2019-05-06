@@ -145,7 +145,7 @@ class NewWeekView extends NewTimeView
                 ));
                 $eventStartFormatted = $eventStart->format('%Y%m%d');
             }
-            if ($eventStartYear === $this->getYear() && $eventStart->getWeekOfYear() === $this->week) {
+            if ($eventStartYear == $this->getYear() && $eventStart->getWeekOfYear() == $this->week) {
                 $this->alldays[$eventStartFormatted][] = $event;
                 $this->weekHasEvent = true;
                 $first = true;
@@ -178,6 +178,7 @@ class NewWeekView extends NewTimeView
                     }
                     $this->weekHasEvent = true;
                 }
+                $eventWeek = $eventStart->getWeekOfYear();
                 $eventStart->addSeconds(86400);
                 $eventStartYear = $eventStart->year;
                 if ($eventStart->month === 1 && $eventWeek > 50) {
