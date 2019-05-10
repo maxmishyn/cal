@@ -226,11 +226,11 @@ END:VCALENDAR
         if ($title === '') {
             $title = $getdate;
         }
-        $title .= '.ics';
         $title = strtr($title, [
             ' ' => '',
             ',' => '_'
         ]);
+        $title .= (new \DateTime())->format('Ymd').'.ics';
 
         if ($sendHeaders) {
             header('Expires: 0');
