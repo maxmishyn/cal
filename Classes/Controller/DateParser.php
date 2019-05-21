@@ -90,6 +90,9 @@ class DateParser
         }
         $this->timeObj = $timeObj;
         $this->conf = &$conf;
+        if (!empty($value) && !is_array($value)) {
+            $value = str_split($value);
+        }
         if (!empty($value) && is_array($value)) {
             foreach ($value as $iValue) {
                 $chr = $iValue;

@@ -596,7 +596,7 @@ class EventService extends BaseService
         $recurringClause = ' OR (tx_cal_event.start_date<=' . $formattedEndtime . ' AND (tx_cal_event.freq IN ("day", "week", "month", "year") AND (tx_cal_event.until>=' . $formattedStarttime . ' OR tx_cal_event.until=0))) OR (tx_cal_event.rdate AND tx_cal_event.rdate_type IN ("date_time", "date", "period")) ';
 
         // putting everything together
-        $additionalWhere = $calendarSearchString . ' AND tx_cal_event.pid IN (' . $pidList . ') ' . $this->cObj->enableFields('tx_cal_event') . ' AND ((tx_cal_event.start_date>=' . $formattedStarttime . ' AND tx_cal_event.start_date<=' . $formattedEndtime . ') OR (tx_cal_event.end_date<=' . $formattedEndtime . ' AND tx_cal_event.end_date>=' . $formattedStarttime . ') OR (tx_cal_event.end_date>=' . $formattedEndtime . ' AND tx_cal_event.start_date<=' . $formattedStarttime . ')' . $recurringClause . ')' . $additionalWhere;
+        $additionalWhere = $calendarSearchString . ' AND tx_cal_event.pid IN (' . $pidList . ') ' . $this->cObj->enableFields('tx_cal_event') . ' AND ((tx_cal_event.start_date>=' . $formattedStarttime . ' AND tx_cal_event.start_date<=' . $formattedEndtime . ') OR (tx_cal_event.end_date<=' . $formattedEndtime . ' AND tx_cal_event.end_date>=' . $formattedStarttime . ') OR (tx_cal_event.end_date>=' . $formattedEndtime . ' AND tx_cal_event.start_date<=' . $formattedStarttime . ')' . $recurringClause . ')' ;
 
         // creating the arrays the user is allowed to see
 
