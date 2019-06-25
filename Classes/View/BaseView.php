@@ -72,7 +72,11 @@ class BaseView extends BaseService
         parent::__construct();
         $this->markerBasedTemplateService = GeneralUtility::makeInstance(MarkerBasedTemplateService::class);
         $this->subscriptionRepository = GeneralUtility::makeInstance(SubscriptionRepository::class);
-        $this->pointerName = $this->controller->getPointerName();
+        if ($this->controller) {
+            $this->pointerName = $this->controller->getPointerName();
+        } else {
+            $this->pointerName = null;
+        }
     }
 
     /**
@@ -83,7 +87,11 @@ class BaseView extends BaseService
         $this->cs_convert = new CharsetConverter();
         $this->master_array = &$master_array;
         $this->initLocalCObject();
-        $this->pointerName = $this->controller->getPointerName();
+        if ($this->controller) {
+            $this->pointerName = $this->controller->getPointerName();
+        } else {
+            $this->pointerName = null;
+        }
     }
 
     /**
