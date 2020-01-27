@@ -29,24 +29,6 @@ $tempColumns = [
             'itemListStyle' => 'height:130px;',
             'foreign_table' => 'tx_cal_calendar'
         ]
-    ],
-    'tx_cal_category' => [
-        'exclude' => 1,
-        'label' => 'LLL:EXT:cal/Resources/Private/Language/locallang_db.xml:tx_cal_category_accesscontroll',
-        'displayCond' => 'FIELD:tx_cal_enable_accesscontroll:REQ:true',
-        'config' => [
-            'renderType' => 'selectMultipleSideBySide',
-            'type' => 'select',
-            'form_type' => 'user',
-            'userFunc' => TreeView::class . '->displayCategoryTree',
-            'treeView' => 1,
-            'size' => 20,
-            'minitems' => 0,
-            'maxitems' => 100,
-            'autoSizeMax' => 20,
-            'itemListStyle' => 'height:270px;',
-            'foreign_table' => 'tx_cal_category'
-        ]
     ]
 ];
 
