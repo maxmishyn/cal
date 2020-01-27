@@ -58,7 +58,7 @@ ics {
 
         view.single_ics {
             event < ics.10.view.ics.event
-            maxDate = 20200101
+            maxDate = 20300101
         }
     }
 

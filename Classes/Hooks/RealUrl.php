@@ -69,9 +69,9 @@ class RealUrl
     public function addPostVarSets(): array
     {
         $postVarSets = [];
-
         $postVarSets['calendar'] = [
-            $this->addValueMap('tx_cal_controller[year]', [
+            $this->addValueMap('tx_cal_controller[year]'
+                 , [
                 '2000' => '2000',
                 '2001' => '2001',
                 '2002' => '2002',
@@ -92,8 +92,14 @@ class RealUrl
                 '2017' => '2017',
                 '2018' => '2018',
                 '2019' => '2019',
-                '2020' => '2020'
-            ]),
+                '2020' => '2020',
+                '2021' => '2021',
+                '2022' => '2022',
+                '2023' => '2023',
+                '2024' => '2024',
+                '2025' => '2025',
+            ]
+                ),
             $this->addValueMap('tx_cal_controller[month]', [
                 '01' => '01',
                 '02' => '02',

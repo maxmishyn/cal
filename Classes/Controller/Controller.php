@@ -376,7 +376,6 @@ class Controller extends AbstractPlugin
         } else {
             $this->conf ['getdate'] = intval($this->piVars ['getdate']);
         }
-
         if ($this->piVars ['jumpto']) {
             /** @var DateParser $dp */
             $dp = GeneralUtility::makeInstance(DateParser::class);
@@ -3816,7 +3815,7 @@ class Controller extends AbstractPlugin
 
 			-->
 			' . $content . '
-		
+
 			<!-- END: Content of extension "' . $this->extKey . '", plugin "' . $this->prefixId . '" -->
 
 			';

@@ -922,7 +922,7 @@ plugin.tx_cal_controller {
             locationModelTemplate4Address = {$plugin.tx_cal_controller.view.location.locationModelTemplate4Address}
 
             # @description    Maximum date to search for events in the future
-            maxDate = 20200101
+            maxDate = 20300101
 
             # @description    Minimum date to search for events in the past
             minDate = 00000001
@@ -1202,7 +1202,7 @@ plugin.tx_cal_controller {
             maxRecurringEvents =
 
             # @description    Maximum date to search for events in the future
-            maxDate = 20200101
+            maxDate = 20300101
 
             # @description    Minimum date to search for events in the past
             minDate = 00000001
